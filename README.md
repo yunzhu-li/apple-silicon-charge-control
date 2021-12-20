@@ -11,19 +11,16 @@ make
 
 ```sh
 # Disable charging
-sudo ./smc -k CH0B -w 02
+sudo ./smc -k CH0C -w 01
 
 # Enable charging
-sudo ./smc -k CH0B -w 00
+sudo ./smc -k CH0C -w 00
 ```
 
-The SMC keys used are `CH0B` and `CH0C`.
-Changing any of these will change the other as well.
+The SMC keys used is `CH0C`. Values:
 
-Values:
-
-`00`: Charging enabled
-`01`: Charging disabled
+- `00`: Charging enabled
+- `01`: Charging disabled
 
 See the following link for more details.
 
@@ -31,15 +28,15 @@ https://github.com/davidwernhart/AlDente/issues/52#issuecomment-777627075
 
 ### Discharge battery when connected to external power
 
-Changing the value of key `CH0J` can cause the system to draw power from the
+Changing the value of key `CH0I` can cause the system to draw power from the
 battery even when external power is connected. Please note that if external
 display is used with the lid closed ("clamshell mode"), display will turn off
 and you will need to wake up the computer again.
 
 ```sh
 # Disconnect external power
-sudo ./smc -k CH0J -w 20
+sudo ./smc -k CH0I -w 01
 
 # Reconnect external power
-sudo ./smc -k CH0J -w 00
+sudo ./smc -k CH0I -w 00
 ```
