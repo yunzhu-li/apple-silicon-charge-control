@@ -1,8 +1,8 @@
 CC = gcc
-CFLAGS = -mmacosx-version-min=10.4  -Wall -g -framework IOKit
+CFLAGS = -mmacosx-version-min=11.0 -Wall -g -framework IOKit
 CPPFLAGS = -DCMD_TOOL_BUILD
 
-all: smc 
+all: smc
 
 smc: smc.o
 	$(CC) $(CFLAGS) -o smc smc.o
